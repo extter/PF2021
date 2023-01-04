@@ -16,7 +16,7 @@ struct Rectangle : Shape {
   void what() const override { std::cout << "rectangle"; }
 };
 
-std::default_random_engine eng; // genera bit casuali / entropia
+std::default_random_engine eng; // genera bit casuali, tipo l'entropia
 std::uniform_int_distribution<int>
     dist(0, 1); // do' quei bit casuali ad una distribuzione
 
@@ -35,11 +35,12 @@ int main() {
 
   std::vector<std::unique_ptr<Shape>> shapes;
   shapes.reserve(10);
+  // size è sempre 0, ma ora ha una capacity di 10; ho allocato spazion
 
   // qui a sto punto devo usare il back inserter: è una funzione che genera un
   // back insert iterator; quando ci faccio *it = ..., quello viene convertito
   // in shapes.pushback
-
+  // back inserter: è una funziona che genera questo iteratore speciale
   std::generate_n(std::back_inserter(shapes), shapes.capacity(), create_shape);
   for (auto const &s : shapes) {
     s->what();
