@@ -41,4 +41,5 @@ int main() {
 // le delete si mettono con un loop alla fine
 // non mettendo il distruttore virtuale, la chiamata va a quello di Shape, e non passa attraverso il delete di circle, tuttavia 
 // l'address sanitizer non riesce a vedere l'errore.
-// il distruttore DEVE essere virtuale, se la funzione è virtuale
+// il distruttore DEVE essere virtuale, se la funzione è virtuale;
+//quando faccio new di una cosa, devo poi usare il distruttore di quella cosa, e non quello per esempio della madre
