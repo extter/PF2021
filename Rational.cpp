@@ -9,7 +9,7 @@ class Rational {
 
 public:
   Rational(int n = 0, int d = 1) : n_{n}, d_{d} {
-    auto const g = std::gcd(n_, d_);
+    auto const g = std::gcd(n_, d_); //OK, gcd è stato messo in c++17, quindi basta compilarlo in maniera giusta e questo errore non ci sarà
     n_ /= g;
     d_ /= g;
     if (d_ < 0) {

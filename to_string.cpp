@@ -1,8 +1,8 @@
 #include <iostream>
-using namespace std;
+
 
 int main() {
   double numero;
-  cin >> numero;
-  cout << to_string(numero) << '\n';
+  std::cin >> numero;
+  std::cout << std::to_string(numero) << '\n';
 }

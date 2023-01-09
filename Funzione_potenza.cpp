@@ -4,8 +4,8 @@ double pwd(double base, int esponente) {
 
   if (base == 0 && esponente == 0) {
     std::cout << "Errore: 0^0 non si può fare!";
-    string s = "meglio riprovare";
-    return s;
+    std::string s = "meglio riprovare";
+    std::cout<< s;
   } else {
     double t = 1;
     for (int i = 0; i < esponente; i++) {

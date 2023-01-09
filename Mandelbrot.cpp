@@ -2,8 +2,7 @@
 #include <string>
 
 class Complex {
-  double r_; // l'underscore si riferisce al fatto che sono delle variabili del
-             // private
+  double r_;
 
   double i_;
 
@@ -23,7 +22,7 @@ public:
     return *this;
   }
 };
-//qui è finito il class complex
+
 
 Complex operator-(Complex const &c) { return {-c.real(), -c.imag()}; }
 
@@ -35,8 +34,8 @@ Complex operator+(Complex const &left, Complex const &right) {
 Complex operator-(Complex const &left, Complex const &right) {
   return left + (-right);
 }
-//questo è un esempio di function overloading: in base a quanti numeri gli do', il compilatore decide che funzione operator- usare;
-
+// questo è un esempio di function overloading: in base a quanti numeri gli do',
+// il compilatore decide che funzione operator- usare;
 
 Complex operator*(Complex const &left, Complex const &right) {
   auto result = left;
