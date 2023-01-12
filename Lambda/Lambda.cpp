@@ -8,7 +8,7 @@
 
 int main() {
   int comparison_value = 10;
-  auto lambda = [comparison_value](int n) { return comparison_value < n; };
+  auto lambda = [comparison_value](int n) ->bool { return comparison_value < n; };
   return lambda(13);
 
   // è la stessa cosa dello scrivere :
