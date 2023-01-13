@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cassert>
 #include <iostream>
+#include <memory>
 
 template <class T>
 class DynamicArray
