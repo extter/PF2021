@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <memory> //per gli unique_ptr e shared_ptr
 class DynamicArray {
   int size_;
   int *data_;
@@ -32,4 +33,16 @@ int main() {
   DynamicArray c{5, 0}; // normal constructor, filled
   auto d = c;           // copy constructor
   d = b;                // copy assignment
+
+  std::unique_ptr<DynamicArray> p{
+      new DynamicArray{5, 8}}; // ora è lui che tiene dentro l'oggetto;
+  // not copiable !!!; i cant do auto pointer = p;
+  auto p_released =
+      p.release(); // unique ptr ha rilasciato la sua risorsa e non esiste
+                   // più, ora ho un pointer che devo gestire io
+  delete p_released;
+
+  auto q_unique = std::make_unique<DynamicArray>(
+      10, 3); // meglio; prende i parametri dalle parentesi e le mette
+              // all'interno del costruttore di DynArr
 }

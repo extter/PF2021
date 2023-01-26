@@ -20,6 +20,6 @@ int main() {
 
   // Initialize with default values 0,1,2,3,4 from a lambda function
   // Equivalent to std::iota(v.begin(), v.end(), 0);
-  std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
+  std::generate(v.begin(), v.end(), [](int n) mutable { return n++; });
   print();
 }
